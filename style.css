@@ -1,0 +1,162 @@
+#logo {
+                width: 100px;
+                height: 100px;
+                margin-right: 35px;
+                margin-bottom: 10px;
+         }    
+
+            
+                nav span {
+                margin-left: 35px;
+                 border: 1px solid blue; /* Синяя рамка вокруг ссылок */
+                 padding: 2px; /* Поля вокруг текста */
+                }
+               
+                nav a {
+                    padding: 2px; /* Поля вокруг текста */
+                    text-decoration: none; /* Скрываем подчёркивание */
+                   }
+                   
+                body {
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                  display: flex;
+                }
+                
+                .container {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    min-height: 100vh; /* Make container at least the full viewport height */
+                }
+                
+                
+             /*   header {
+                  display: flex;
+                   justify-content: flex-start;
+                  align-items: center;
+                   background-color: #f0f0f0;
+                  width: 100%;
+                }*/
+
+                header{
+                    /*border-bottom: 1px solid blue;*/
+                    padding-bottom: 20px;
+                    padding-top: 20px;
+                    background-color: #f0f0f0;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+                
+                
+                aside {
+                    background-color: #333;
+                    color: white;
+                    padding: 20px;
+            
+                  height: 100%;
+                }
+                aside h1 {
+                    margin: 0;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    
+                }
+                
+                main {
+                    flex: 1;
+                    padding: 20px;
+                  display: flex;
+                  flex-direction: column;
+                }
+                .user-selection{
+                  display: flex;
+                  flex-direction: column;
+                   align-items: center;
+                }
+                .user-button {
+                  padding: 10px 20px;
+                  margin-bottom: 10px;
+                   background-color: #4caf50;
+                   color: white;
+                    border: none;
+                    cursor: pointer;
+                  display: block;
+                }
+                .slider {
+                    position: relative;
+                    overflow: hidden;
+                    width: 600px;
+                   max-height: 400px;
+                    margin: 0 auto; /* Center the slider */
+                }
+                
+                .slide {
+                    display: none;
+                    width: 100%;
+                   height: auto;
+                }
+                
+                .slide img {
+                    width: 100%;
+                     height: auto;
+                   display: block; /* removes extra space at the bottom */
+                }
+                
+                .slider-button {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: rgba(0, 0, 0, 0.5);
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+                
+                .slider-button.prev {
+                    left: 10px;
+                }
+                
+                .slider-button.next {
+                    right: 10px;
+                }
+                #selected-user{
+                  margin-top: 10px;
+                    font-weight: bold;
+                }
+                
+                footer{
+                  text-align: center;
+                  padding: 10px;
+                 background-color: #f0f0f0;
+  
+                }
+                
+                @media only screen and (max-width: 768px) {
+
+                    header {
+                    flex-direction: column;
+                     align-items: center;
+                  }
+                  
+                    aside {
+                        width: 100%; /* Changed from 100% to a smaller value */
+                     padding: 10px; /* Reduced padding on small screens */
+                    }
+                     aside h1 {
+                        font-size: 1.2rem; /* Reduced font size on small screens*/
+                     }
+                    .slider {
+                          width: 100%;
+                    }
+                    .user-selection{
+                     align-items: stretch;
+                  
+                    }
+                      .user-button {
+                           margin: 10px 0;
+                       }
+                  }

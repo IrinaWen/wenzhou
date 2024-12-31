@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wife</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<header> 
+<h1>vladik </h1>
+
+</header>
+
+<main> 
+  <div class="container mt-4">
+
+  
+<body>
+  <div class="container">
+   <h1>Welcomeee, my wife! </h1>
+      <p>Добро пожаловать на твою личную ссылочку.</p>
+      <br>
+      <p> 
+        Ниже ссылка, если вы сюда попали случайно:
+      </p>
+      <a href="index.html">Return to Main Page</a>
+      <br>
+      <br>
+  </div>
+
+  <form id="contactForm" action="mailto:irinabuhto@gmail.co," method="post" enctype="text/plain">
+    <div class="form-group">
+        <label for="name">Введи свое уникальное имя</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Укажи свою электронную почту</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label>Настроение моей госпожи в процентах</label>
+      <div class="form-row">
+          <div class="col">
+              <label for="blueMood">Сколько в госпоже грусти: </label>
+              <input type="number" class="form-control" id="blueMood" name="blueMood" min="0" max="100" required>
+          </div>
+          <div class="col">
+              <label for="redMood">Сколько в госпоже злости:</label>
+              <input type="number" class="form-control" id="redMood" name="redMood" min="0" max="100" required>
+          </div>
+         <div class="col">
+              <label for="greenMood">Сколько в госпоже радости: </label>
+               <input type="number" class="form-control" id="greenMood" name="greenMood" min="0" max="100" required>
+          </div>
+      </div>
+   </div>
+
+    <div class="form-group">
+      <label for="appleCount">Хочет ли сегодня моя госпожа общаться со мной?</label>
+     <select class="form-control" id="appleCount" name="appleCount" required>
+         <option value="five">Да</option>
+         <option value="three">Нет(села социальная батарейка и пр.)</option>
+         <option value="two_and_half">Хочу, но есть условия</option>
+     </select>
+ </div>
+   <div id="additionalOptions" style="display: none;">
+   <div class="form-group">
+       <label for="additionalOption">Укажите возможные условия</label>
+          <select class="form-control" id="additionalOption" name="additionalOption">
+             <option value="with_caramel">Хочу много нежности и ласки</option>
+              <option value="without_caramel">Нужно поговорить о блядиках и преимуществах доттолонов</option>
+              <option value="with_nuts"> . . . предложить свой вариант ниже</option>
+            </select>
+     </div>
+      <div class="form-group">
+         <label for="additionalOptionText">Дополнительные пожелания:</label>
+         <input type="text" class="form-control" id="additionalOptionText" name="additionalOptionText" placeholder="добавь сюда пожелания: ">
+       </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">Здесь моя госпожа может поделиться своим настроением или как прошел её день: </label>
+        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+    </div>
+     <button type="submit" class="btn btn-primary">Send Email</button>
+</form>
+</div>
+</main>
+
+
+</div>
+
+  <footer>
+    &copy;
+    Для вас старалась Wenzhou Company,
+    <time datetime="2024">2024</time>
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('appleCount').addEventListener('change', function() {
+         var additionalOptions = document.getElementById('additionalOptions');
+         if (this.value === 'two_and_half') {
+           additionalOptions.style.display = 'block';
+        } else {
+            additionalOptions.style.display = 'none';
+        }
+     });
+    function drawMoodChart(){
+        var blueMood = parseInt(document.getElementById('blueMood').value) || 0;
+        var redMood = parseInt(document.getElementById('redMood').value) || 0;
+         var greenMood = parseInt(document.getElementById('greenMood').value) || 0;
+      
+        var totalMood = blueMood + redMood + greenMood;
+
+       if(totalMood > 100){
+            alert('The mood percentage must be equal or less than 100%.');
+            return;
+        }
+
+         var moodChart = document.getElementById('moodChart');
+
+          moodChart.innerHTML = ''; // Clean previous bars
+
+           var barWidth = 100;
+         var barHeight = 30;
+          
+         
+        if(blueMood>0){
+          var blueBar = document.createElement('div');
+           blueBar.style.width = blueMood + '%';
+           blueBar.style.height = barHeight + 'px';
+           blueBar.style.backgroundColor = 'blue';
+            blueBar.style.marginBottom = '5px';
+         blueBar.style.textAlign = 'right';
+         blueBar.style.lineHeight = barHeight+'px';
+          blueBar.innerText = blueMood+'%';
+           moodChart.appendChild(blueBar);
+        }
+        if(redMood>0){
+           var redBar = document.createElement('div');
+           redBar.style.width = redMood + '%';
+           redBar.style.height = barHeight + 'px';
+           redBar.style.backgroundColor = 'red';
+             redBar.style.marginBottom = '5px';
+              redBar.style.textAlign = 'right';
+               redBar.style.lineHeight = barHeight+'px';
+           redBar.innerText = redMood+'%';
+            moodChart.appendChild(redBar);
+        }
+      if(greenMood>0){
+          var greenBar = document.createElement('div');
+           greenBar.style.width = greenMood + '%';
+           greenBar.style.height = barHeight + 'px';
+           greenBar.style.backgroundColor = 'green';
+             greenBar.style.marginBottom = '5px';
+              greenBar.style.textAlign = 'right';
+               greenBar.style.lineHeight = barHeight+'px';
+           greenBar.innerText = greenMood+'%';
+           moodChart.appendChild(greenBar);
+        }
+      }
+</script>
+</body>
+</html>
